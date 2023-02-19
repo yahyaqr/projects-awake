@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>923282210074-g0nuh338agn6f3683i54v59uuf06hj2r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.923282210074-g0nuh338agn6f3683i54v59uuf06hj2r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC6uliMyGPcUOdopzUOHqrd1zTZ-aCslRg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>923282210074</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.beforemidnight.awake</string>
+	<key>PROJECT_ID</key>
+	<string>beforemidnight-awake-android</string>
+	<key>STORAGE_BUCKET</key>
+	<string>beforemidnight-awake-android.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:923282210074:ios:98826a44a3432b7b9c80a3</string>
+	<key>DATABASE_URL</key>
+	<string>https://beforemidnight-awake-android-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>

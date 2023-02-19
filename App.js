@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+// Import Theme from React Native Paper
+import { Provider } from 'react-native-paper';
+import { theme } from './src/core/ReactNativePaperTheme';
+
+// Import Authentication from Firebase
+import firebase from '@react-native-firebase/app';
+import '@react-native-firebase/auth';
+import { FIREBASE_CONFIG } from './src/core/FirebaseConfig';
+
+// Import Navigators from React Navigation
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './src/AppNavigator';
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(FIREBASE_CONFIG);
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => (
+  <Provider theme={theme}>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  </Provider>
+);
+
+export default App;

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "923282210074",
+    "firebase_url": "https://beforemidnight-awake-android-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "beforemidnight-awake-android",
+    "storage_bucket": "beforemidnight-awake-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923282210074:android:f4d7c75e1067b50f9c80a3",
+        "android_client_info": {
+          "package_name": "com.beforemidnight.awake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923282210074-qvbqi01601ldmjk0nt3u7eu5silpo6te.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpVT6uFh3cAfgbfNELfqaQf8EYzkSR_lc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923282210074-qvbqi01601ldmjk0nt3u7eu5silpo6te.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,26 +1,27 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+
+// Import Navigators from React Navigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+// Import Screen and Navigator
+import AppNavigator from './AppNavigator';
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 
 const Stack = createNativeStackNavigator();
 
-const UserNavigator = () => {
+function UserNavigator(props) {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Home' component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name='Login' component={LoginScreen} />
+      <Stack.Screen name='Register' component={RegisterScreen} />
+      <Stack.Screen
+        name='AppNavigator'
+        component={AppNavigator}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
-};
+}
 
 export default UserNavigator;

@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Yahya Aqrom",
+      "email": "aqrom.yahya75@gmail.com",
+      "age": 25,
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Mizzi Muhammad NA",
+      "email": "tes@tes.com",
+      "age": 22,
+      "gender": "Male"
+    },
+    {
+      "id": 3,
+      "name": "Muhammad Agung Ahsary",
+      "email": "tes@tes.com",
+      "age": 22,
+      "gender": "Male"
+    }
+  ]
+}

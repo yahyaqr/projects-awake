@@ -1,3 +1,0 @@
-OPENAI_KEY=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
-
-echo "OPENAI_KEY=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" >> ~/.aicommits

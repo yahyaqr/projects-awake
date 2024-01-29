@@ -1,25 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+
+import BrainIcon from '../assets/Icons/Topbar/BrainIcon';
+import FireIcon from '../assets/Icons/Topbar/FireIcon';
+import CoinIcon from '../assets/Icons/Topbar/CoinIcon';
 
 function Topbar() {
   return (
     <View style={styles.infoContainer}>
       <View style={styles.info}>
-        <Ionicons name='trophy-outline' size={24} color='black' />
-        <Text style={styles.infoText}>Level 5</Text>
+        <BrainIcon size='40' color='#FFFFFF'></BrainIcon>
+        <Text style={[styles.infoText, styles.colorBrain]}>10</Text>
       </View>
       <View style={styles.info}>
-        <Ionicons name='heart-outline' size={24} color='black' />
-        <Text style={styles.infoText}>Health 80%</Text>
+        <FireIcon size='40' color='#FFFFFF'></FireIcon>
+        <Text style={[styles.infoText, styles.colorFire]}>15</Text>
       </View>
       <View style={styles.info}>
-        <Ionicons name='flash-outline' size={24} color='black' />
-        <Text style={styles.infoText}>Streak 3</Text>
-      </View>
-      <View style={styles.info}>
-        <Ionicons name='coins-outline' size={24} color='black' />
-        <Text style={styles.infoText}>Coins 100</Text>
+        <CoinIcon size='40' color='#FFFFFF'></CoinIcon>
+        <Text style={[styles.infoText, styles.colorCoin]}>1500</Text>
       </View>
     </View>
   );
@@ -30,19 +29,30 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '100%',
-    paddingTop: '20px',
-    paddingBottom: '20px',
-    backgroundColor: '#FFF',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    paddingTop: '12px',
+    paddingBottom: '12px',
+    backgroundColor: '#FCF6FD',
+    borderBottomWidth: 4,
+    borderBottomColor: '#EBEAEB',
   },
   info: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   infoText: {
+    fontSize: 28,
     marginLeft: 5,
+  },
+  colorBrain: {
+    color: '#EB5851',
+  },
+  colorFire: {
+    color: '#FF9600',
+  },
+  colorCoin: {
+    color: '#3BB0F0',
   },
 });
 

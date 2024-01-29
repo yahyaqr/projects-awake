@@ -1,66 +1,63 @@
-import React, { useContext, useEffect, useState } from 'react'; // Fixed import statement
-import { StyleSheet, Text, View } from 'react-native';
-import { UserContext } from '../../core/UserContext';
-import axios from 'axios';
+import React from 'react';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 
-const SleepTrackingScreen = () => {
-  const { user } = useContext(UserContext);
-  const [reactionTimes, setReactionTimes] = useState([]); // Added state for reaction times
+// Import Components
+import DataCard from '../../components/Card/DataCard';
 
-  useEffect(() => {
-    // Fetch reaction times data when component mounts
-    fetchReactionTimesData();
-  }, []); // Empty dependency array to ensure it runs only once on mount
-
-  // Retrieve the reaction time data from db.json
-  const fetchReactionTimesData = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3000/reactionTimes?userId=${user.id}`, // Use template literals to interpolate user.id in URL
-      );
-      const reactionTimes = response.data;
-      setReactionTimes(reactionTimes); // Update reaction times state with fetched data
-    } catch (error) {
-      console.error('Failed to fetch reaction times data:', error);
-    }
-  };
-
-  // Extract the reaction times from the data array
-  const allReactionTimes = reactionTimes.map((item) => item.data).flat();
-
-  // Calculate the mean reaction time
-  const meanReactionTime =
-    allReactionTimes.reduce((acc, time) => acc + time, 0) /
-    allReactionTimes.length;
-
-  // Set the threshold for identifying lapses (in milliseconds)
-  const threshold = 200;
-
-  // Count the number of lapses
-  const lapses = allReactionTimes.filter((time) => time > threshold).length;
-
+function ProfileScreen() {
   return (
-    <View style={styles.layout}>
-      <Text style={styles.title}>Sleep Tracking Data</Text>
-      <Text style={styles.text}>
-        Mean Reaction Time: {meanReactionTime.toFixed(2)} ms
-      </Text>
-      <Text style={styles.text}>Lapses: {lapses}</Text>
-      {/* Display other calculated data or analysis results */}
-    </View>
+    <SafeAreaView style={styles.layout}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Sleep Data</Text>
+      </View>
+      <ScrollView style={styles.content}>
+        <DataCard
+          headerText={'03:00 PM'}
+          subheaderText={'Wednesday, Feb 20 2023'}
+        ></DataCard>
+        <DataCard
+          headerText={'01:00 PM'}
+          subheaderText={'Wednesday, Feb 20 2023'}
+        ></DataCard>
+        <DataCard
+          headerText={'11:00 AM'}
+          subheaderText={'Wednesday, Feb 20 2023'}
+        ></DataCard>
+        <DataCard
+          headerText={'09:00 AM'}
+          subheaderText={'Wednesday, Feb 20 2023'}
+        ></DataCard>
+      </ScrollView>
+    </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   layout: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'column',
+    height: '100%',
+    width: '100%',
   },
-  title: {
-    fontSize: 32,
-    marginBottom: 16,
+  header: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+    maxHeight: '75px',
+    width: '100%',
+  },
+  headerText: {
+    fontSize: '24px',
+    fontWeight: '700',
+  },
+  content: {
+    height: '400px',
+    paddingLeft: '20px',
+    paddingRight: '20px',
   },
 });
 
-export default SleepTrackingScreen;
+export default ProfileScreen;

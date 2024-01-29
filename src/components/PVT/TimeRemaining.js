@@ -1,22 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { StyleSheet } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
 
 function TimeRemaining(props) {
-  const totalTime = 20;
-  const [time, setTime] = useState(totalTime);
+  const { time, totalTime } = props;
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime((time) => {
-        props.sendDataToParent(time - 1); // Call sendDataToParent inside setInterval callback
-        return time - 1;
-      });
-    }, 1000);
+    if (time === 0) {
+      props.sendTimeRemainingDataToParent();
+    }
+  }, [time]);
 
-    return () => clearInterval(timer);
-  }, []);
-
-  return <ProgressBar progress={time / totalTime} />;
+  return (
+    <ProgressBar
+      progress={time / totalTime}
+      color={'#1CB0F6'}
+      style={styles.progressBar}
+    />
+  );
 }
+
+const styles = StyleSheet.create({
+  progressBar: {
+    height: '20px',
+    backgroundColor: '#fafafa',
+  },
+});
 
 export default TimeRemaining;

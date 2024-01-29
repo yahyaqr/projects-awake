@@ -24,9 +24,9 @@ function RegisterScreen({ navigation }) {
         gender,
       };
       // Send a POST request to json-server to add the user data
-      await axios.post('http://localhost:3000/users', user);
+      await axios.post('http://34.101.218.37:8000/users', user);
       // Update the user context with the registered user data
-      const response = await axios.get('http://localhost:3000/users');
+      const response = await axios.get('http://34.101.218.37:8000/users');
       const users = response.data;
       const userData = users.find(
         (u) => u.email === user.email && u.password === user.password,

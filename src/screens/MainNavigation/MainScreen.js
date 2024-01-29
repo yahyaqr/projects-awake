@@ -1,25 +1,21 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Button } from 'react-native';
-import PVT from '../../components/PVT/PVT';
+import React from 'react';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import imgBangun from '../../assets/Bangun.png';
 
 const MainScreen = () => {
-  const [gameStarted, setGameStarted] = useState(false);
-
+  const navigation = useNavigation();
   const handleStartGame = () => {
-    setGameStarted(true);
-  };
-
-  const handleEndGame = (data) => {
-    setGameStarted(data);
+    navigation.navigate('PVT');
   };
 
   return (
     <View style={styles.layout}>
-      {gameStarted ? (
-        <PVT sendDataToParent={handleEndGame} />
-      ) : (
-        <Button title='Start Game' onPress={handleStartGame} />
-      )}
+      <img src={imgBangun} style={styles.image} draggable={false} />
+      <Pressable style={styles.startButton} onPress={handleStartGame}>
+        <Text style={styles.text}>START GAME</Text>
+      </Pressable>
     </View>
   );
 };
@@ -29,6 +25,30 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  image: {
+    cursor: 'default',
+    maxHeight: '350px',
+  },
+  startButton: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '30px',
+    width: '275px',
+    maxHeight: '75px',
+    backgroundColor: '#56C0B8',
+    border: '3px solid #1F0E0D',
+    shadowColor: '#111',
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3,
+    borderRadius: '10px',
+  },
+  text: {
+    fontWeight: 700,
+    fontSize: '24px',
+    userSelect: 'none',
   },
 });
 
